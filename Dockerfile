@@ -1,4 +1,4 @@
-FROM mysql:8.0
+FROM mysql:8.0-debian
 COPY ./mha4mysql-node-0.58.tar.gz /tmp
 RUN build_deps='ssh perl libdbd-mysql-perl libmodule-install-perl make' \
     && apt-get update \
@@ -11,4 +11,3 @@ RUN build_deps='ssh perl libdbd-mysql-perl libmodule-install-perl make' \
     && cd /opt \
     && rm -rf mha4mysql-* \
     && apt-get clean
-    
